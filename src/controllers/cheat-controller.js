@@ -1,6 +1,15 @@
 const prisma = require("../models/prisma");
 const cheat24 = require("../calculateCheat");
 
+exports.hello = async (req, res, next) => {
+	try {
+		// console.log("Hello Aquila");
+		res.json({ message: "Hello Aquila" });
+	} catch (err) {
+		next(err);
+	}
+};
+
 exports.addNumber = async (req, res, next) => {
 	try {
 		const { number } = req.query;
